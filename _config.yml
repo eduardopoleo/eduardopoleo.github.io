@@ -2,8 +2,8 @@ title: Tokenhangun
 author: Eduardo Poleo
 email: eduardopoleo@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
-  Hey thanks for visiting my blog. I'm a software developer located in Toronto
-  I do ruby and javascript at work and I write mostly about AWS and scalability
+  Hey thanks for visiting my blog. I'm a software developer located in Toronto.
+  I do ruby and javascript at work and I mostly write about AWS and scalability
   these days! Hope you enjoy the write ups.
 
 show_excerpts: true # set to true to show excerpts on the homepage
