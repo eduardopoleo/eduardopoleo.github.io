@@ -37,7 +37,7 @@ EC2 are still Amazon's bread and butter. They consist on virtual servers of diff
 
 ![EC2 Wizard](https://s3.us-east-2.amazonaws.com/eduardo-tutorial-videos/ec2/selecting_AMI.gif)
 
-#### STEP 1: Choose an AMI
+#### Step 1: Choose an AMI
 
 We're then faced with the first step of the process where we'll be choosing an Amazon Machine Image ([AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)). AMIs are basically templates with pre-installed software ready for developers to use. AMI can be free or paid and they can be provided by AWS or third parties. Also organization can decide to create their own images for private use when their needs become very specific.
 
