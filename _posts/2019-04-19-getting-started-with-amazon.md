@@ -20,7 +20,7 @@ The simplest (but not necessarily most recommended) way to get a server running 
 - [Ssh](https://searchsecurity.techtarget.com/definition/Secure-Shell) and install software (dependencies, database, etc)
 - Test the app
 
-We'll go through each of these steps and explain all the new terms along the way. Throughout this tutorial I'll be using a very simple url rails 5 url shortener [app](https://github.com/eduardopoleo/aws_tiny_url). We'll be using this repo in subsequent steps so feel free to check it out.
+We'll go through each of these steps and explain all the new terms along the way. Throughout this tutorial I'll be using a very simple rails 5 blog [app](https://github.com/eduardopoleo/aws_blog.git). We'll be using this repo in subsequent steps so feel free to check it out.
 
 ### Choose an Amazon Region.
 Amazon has data-centers located on different parts of the [world](https://aws.amazon.com/about-aws/global-infrastructure/) which are known as [regions](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html). Each region contains a certain number of availability zones (AZ) where ultimately the infrastructure lives. While each region is completely independent from each other, AZs from within the same region can communicate with each other through [low latency links](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-regions-availability-zones) nevertheless, they are physically and resource-wise (power supply, etc) isolated from one another. This set up allows AWS to efficiently serve users across the globe while providing enough redundancy to protect against unfortunate events (e.g power outages, natural disasters, etc).
@@ -41,7 +41,7 @@ EC2 are still Amazon's bread and butter. They consist on virtual servers of diff
 
 We're then faced with the first step of the process where we'll be choosing an Amazon Machine Image ([AMI](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)). AMIs are basically templates with pre-installed software ready for developers to use. AMI can be free or paid and they can be provided by AWS or third parties. Also organization can decide to create their own images for private use when their needs become very specific.
 
-For this exercise we'll be using an Ubuntu server which can easily support our simple rails app. To find this specific AMI just paste "Ubuntu Server 16.04 LTS" on the AMI search bar and select the free-tier option. If you're following along please make sure you choose the instance with id ami-0653e888ec96eab9b.
+For this exercise we'll be using an Ubuntu server which can easily support our simple rails app. To find this specific AMI just paste "Ubuntu Server 16.04 LTS" on the AMI search bar and select the free-tier option.
 
 #### Step 2: Choose an Instance Type
 
@@ -104,46 +104,37 @@ source ~/.bashrc
 rbenv install 2.5.1
 rbenv global 2.5.1
 
-# Installing the node runtime (required for rails)
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-sudo apt install -y nodejs
-sudo apt install -y gcc g++ make
-
 # Installing Postgres
 sudo apt install -y postgresql postgresql-contrib
 sudo apt-get -y install postgresql-server-dev-9.5
 sudo -u postgres createuser ubuntu
-sudo -u postgres createdb tiny_url_production
+sudo -u postgres createdb aws_blog_production
 
 # cloning and running our project
-git clone https://github.com/eduardopoleo/aws_tiny_url.git
-cd aws_tiny_url
+git clone https://github.com/eduardopoleo/aws_blog.git
+cd aws_blog
 gem install bundler -v '< 2.0'
 gem install rails -v 5.2.1
 
 bundle install
 RAILS_ENV=production rake db:migrate
-RAILS_ENV=production rake db:seed
 ```
 
 Finally, we run the server with 
 
 ```bash
-RAILS_ENV=production rails server -b <YOUR_INSTANCE_PUBLIC_DNS> -p 3000
+RAILS_ENV=production rails server -d 
 ```
+The `-d` options allows you to run your server on a detached state freeing the console for you to run other commands. If you need to see the server logs (e.g to verify that the requests are coming through) you can always tail the production logs with `tail -f log/production.log`. Finally, if you want to kill the server you can find the process id running on port 3000 `lsof -i:3000` and then kill it `kill -9 <PID>`
 
-As mentioned at the beginning of the post our app is a very simple url shortener. You can provide an url and it'll return a shorten version of it in the form of a slug. We can give it a try by executing a post request with curl from your local machine:
+You can test everything is working properly by attempting to create a post with:
 
 ```bash
-curl --header "Content-Type: application/json" \
-  --request POST \
-  --data '{"original_url":"https://unix.stackexchange.com/questions/115838/what-is-the-right-file-permission-for-a-pem-file-to-ssh-and-scp"}' \
-  <YOUR_INSTANCE_PUBLIC_DNS>:3000/url -v
-
-#=> The server should response with something along the lies of {"url":"<YOUR_INSTANCE_PUBLIC_DNS>:3000/784b81d"}
+curl -d '{"title":"Post Title", "body":"Post Body"}'\
+-H "Content-Type: application/json"\
+-X POST http://<YOUR_INSTANCE_PUBLIC_DNS>:3000/posts -v
+#=> You should get 201 status code if everything went well
 ```
-
-Now if you navigate to the returned url you should be redirected to the original url.
 
 This concludes the first post on this AWS series, we managed to get a simple rails app up and running and learned lots of AWS concepts along the way. That being said, this set up is less than ideal to run production apps for many reasons:
 
