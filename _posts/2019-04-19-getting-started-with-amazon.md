@@ -111,7 +111,7 @@ sudo -u postgres createuser ubuntu
 sudo -u postgres createdb aws_blog_production
 
 # cloning and running our project
-git clone https://github.com/eduardopoleo/aws_blog.git
+git clone --branch post1 https://github.com/eduardopoleo/aws_blog.git
 cd aws_blog
 gem install bundler -v '< 2.0'
 gem install rails -v 5.2.1
