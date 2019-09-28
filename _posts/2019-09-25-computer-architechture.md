@@ -42,7 +42,7 @@ This thing about arbitrary codes is all well and good, but how do you go from bi
 
 ![and/or gates](https://eduardo-tutorial-videos.s3.us-east-2.amazonaws.com/HDIK/and_or.png)
 
-Both of these gates operate on 2 input bits (a, b) and have 1 output (o). In the case of the AND gate o will only be "1" when both of the inputs a and b are 1. The OR gate on the other hand, produces an on bit (1) if any a or b are 1. If you're are a programmer it's easy to draw parallelism between these gates and the common logical "&&" and "||" statements used on your day to day job.
+Both of these gates operate on 2 input bits (a, b) and have 1 output (o). In the case of the AND gate o will only be "1" when both of the inputs a and b are 1. The OR gate on the other hand, produces an on bit (1) if any a or b are 1. If you're are a programmer it's easy to draw parallelism between these gates and the common logical "and" and "or" statements used on your day to day job.
 
 There's another gate that's worth taking a look at, the NAND gate. As its name implies the NAND gate is the "negation" of the "AND" gate. All it's outputs on the truth table are inverted with respect to the "AND" gate. That is "o" is enabled for all combinations of inputs except for when a and b are 1. Here's the truth table for it:
 
