@@ -9,20 +9,20 @@ This starts a series of posts where I summarize some of my learnings after readi
 ## Codes
 
 Computer are dumb machines that are able to perform simple calculations and procedures fast (like almost light speed fast). When enough of these procedures are put together in the right order computers are able to perform tasks that are useful (and seemingly complex) to humans. They do all this by controlling the electrical current that runs through some small wires known as bits. At any given point in time these bits can live in any of these two states: 
-- "1", when electricity runs through.
-- "0", when NO electricity runs through.
+- 1, when electricity runs through.
+- 0, when NO electricity runs through.
 
 These bits can be arranged into sequences to express some arbitrary meaning we want to give to them. For example with a single bit, we can determine whether or not a lamp should be on or off. Our code could be something like this:
 
 Bit state | Lamp light
-:---      | :---:
+:---:     | :---:
 1         | On
 0         | Off 
 
 Now, with 2 bits we can do more interesting stuff such as determining what light should be on a traffic light. A code for this could look like the following:
 
 Bits state | Traffic Light
-:---       | :---: 
+:---:      | :---: 
 00         | ❤️
 01         | 💛
 10         | 💚
