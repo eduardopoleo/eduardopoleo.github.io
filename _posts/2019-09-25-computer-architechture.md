@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Computer Architecture. Pt1"
+title: "Computer Architecture. Pt-1"
 date: 2019-09-28
 ---
 
