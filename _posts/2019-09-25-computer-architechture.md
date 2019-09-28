@@ -38,21 +38,21 @@ This is a very useful code and it's probably employed by all computers nowadays 
 
 ## Logic Gates
 
-This thing about arbitrary codes is all well and good, but how do you go from bit combinations to full fledged systems capable of calculating and remembering things? It's quite the journey but it all starts with logic gates. Logic gates are hardware devices that operate on bits and they usually have the ability to produce an output bit(s) given some input bit(s). A couple of very simple gates are
+This thing about arbitrary codes is all well and good, but how do you go from bit combinations to full fledged systems capable of calculating and remembering things? It's quite the journey but it all starts with logic gates. Logic gates are hardware devices that operate on bits and they usually have the ability to produce output bit(s) given some input bit(s). A couple of very simple gates are
 
 ![and/or gates](https://eduardo-tutorial-videos.s3.us-east-2.amazonaws.com/HDIK/and_or.png)
 
-Both of these gates operate on 2 input bits (a, b) and have 1 output (o). In the case of the AND gate o will only be "1" when both of the inputs a and b are 1. The OR gate on the other hand, produces an on bit (1) if any a or b are 1. If you're are a programmer it's easy to draw parallelism between these gates and the common logic "and" and "or" statements used on your day to day job.
+Both of these gates operate on 2 input bits (**a**, **b**) and have 1 output (**o**). In the case of the AND gate o will only be "1" when both of the inputs **a** and **b** are 1. The OR gate on the other hand, produces an on bit (1) if any **a** or **b** are 1. If you're are a programmer it's easy to draw parallelism between these gates and the common logic "and" and "or" statements used on your day to day job.
 
-There's another gate that's worth taking a look at, the NAND gate. As its name implies the NAND gate is the "negation" of the "AND" gate. All it's outputs on the truth table are inverted with respect to the "AND" gate. That is "o" is enabled for all combinations of inputs except for when a and b are 1. Here's the truth table for it:
+There's another gate that's worth taking a look at, the NAND gate. As its name implies the NAND gate is the negation of the AND gate. All it's outputs on the truth table are inverted with respect to the "AND" gate. That is **o** is enabled for all combinations of inputs except for when **a** and **b** are 1. Here's the truth table for it:
 
 ![nand gate](https://eduardo-tutorial-videos.s3.us-east-2.amazonaws.com/HDIK/nand.png)
 
-One interesting property about the "NAND" gate is that it can be combined and arranged to create multiple other types of gates. For instance we can start by creating a NOT gate that is a gate that takes an single input (a) and produces the opposite output (o) by simply feeding the same input twice to the NAND gate. 
+One interesting property about the NAND gate is that it can be combined and arranged to create multiple other types of gates. For instance we can start by creating a NOT gate that is a gate that takes an single input **a** and produces the opposite output **o** by simply feeding the same input twice to the NAND gate. 
 
 ![not gate](https://eduardo-tutorial-videos.s3.us-east-2.amazonaws.com/HDIK/not.png)
 
-Then we can use this to recreate both of the gates AND and OR showed before
+Then we can use this to recreate both of the OR and the AND gates shown before:
 
 ![not gate](https://eduardo-tutorial-videos.s3.us-east-2.amazonaws.com/HDIK/and_not_redux.png)
 
