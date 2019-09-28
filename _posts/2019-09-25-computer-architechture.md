@@ -4,7 +4,7 @@ title: "Computer Architecture. Pt-1"
 date: 2019-09-28
 ---
 
-This starts a series of posts where I summarize some of my learnings after reading ["But How Do It Know?"](http://www.buthowdoitknow.com/index.html). For those who do not know, this books is a "human-readable" introduction to the fundamentals of computer architecture. The author builds a theoretical computer starting from NAND gates all the way to the CPU's control section. He also touches on some other topics likes boolean arithmetic, computer peripherals, humans vs machines intelligence, among other things. It's an amazing read for anybody that wants to know how computers work not only engineers. The author assumes no technical background so the language throughout is very accessible and the content is very well supported with amazing graphics. Well, without further ado here's what I got from it.
+This starts a series of posts where I summarize some of my learnings after reading [But How Do It Know?](http://www.buthowdoitknow.com/index.html). For those who do not know, this books is a "human-readable" introduction to the fundamentals of computer architecture. The author builds a theoretical computer starting from NAND gates all the way to the CPU's control section. He also touches on some other topics likes boolean arithmetic, computer peripherals, humans vs machines intelligence, among other things. It's an amazing read for anybody that wants to know how computers work not only engineers. The author assumes no technical background so the language throughout is very accessible and the content is very well supported with amazing graphics. Well, without further ado here's what I got from it.
 
 ## Codes
 
@@ -36,13 +36,13 @@ Now is there anything interesting, besides lamps and traffic lights, that can be
 
 This is a very useful code and it's probably employed by all computers nowadays but it's important to understand that, just like our lamp or traffic light code, this is a man-made construct. A convention established by a group of people in a room that one day arbitrarily decided that computers should understand "01100011" as the character "c". There is nothing intrinsically special about the bit combination "01100011" that enforces the meaning "c" on a particular computer. It's just part of a standard agreed upon, most likely to enable the representation of the letter "c" across all computers, and devices regardless of their manufacturer.
 
-## Logical Gates
+## Logic Gates
 
-This thing about arbitrary codes is all well and good, but how do you go from bit combinations to full fledged systems capable of calculating and remembering things? It's quite the journey but it all starts with logical gates. Logical gates are hardware devices that operate on bits and they usually have the ability to produce an output bit(s) given some input bit(s). A couple of very simple gates are
+This thing about arbitrary codes is all well and good, but how do you go from bit combinations to full fledged systems capable of calculating and remembering things? It's quite the journey but it all starts with logic gates. Logic gates are hardware devices that operate on bits and they usually have the ability to produce an output bit(s) given some input bit(s). A couple of very simple gates are
 
 ![and/or gates](https://eduardo-tutorial-videos.s3.us-east-2.amazonaws.com/HDIK/and_or.png)
 
-Both of these gates operate on 2 input bits (a, b) and have 1 output (o). In the case of the AND gate o will only be "1" when both of the inputs a and b are 1. The OR gate on the other hand, produces an on bit (1) if any a or b are 1. If you're are a programmer it's easy to draw parallelism between these gates and the common logical "and" and "or" statements used on your day to day job.
+Both of these gates operate on 2 input bits (a, b) and have 1 output (o). In the case of the AND gate o will only be "1" when both of the inputs a and b are 1. The OR gate on the other hand, produces an on bit (1) if any a or b are 1. If you're are a programmer it's easy to draw parallelism between these gates and the common logic "and" and "or" statements used on your day to day job.
 
 There's another gate that's worth taking a look at, the NAND gate. As its name implies the NAND gate is the "negation" of the "AND" gate. All it's outputs on the truth table are inverted with respect to the "AND" gate. That is "o" is enabled for all combinations of inputs except for when a and b are 1. Here's the truth table for it:
 
