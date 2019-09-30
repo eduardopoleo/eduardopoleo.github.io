@@ -29,11 +29,43 @@ Initial s = 0, i = 1, o = 1
 4s s = 0, i = 1, o = 0
 5s s = 1, i = 1, o = 1
 
-<sub><strong>NOTE: This whole process of setting and un-setting memory usually happens on a fraction of a second. The timeline is stretched here for the purpose of the explanation.</strong></sub>
+<sub><strong>NOTE: This whole process of setting and un-setting memory usually happens on a fraction of a second. The time line is stretched here for the purpose of the explanation.</strong></sub>
 
 Initially, the current state of the memory bit **o** is 1 and the incoming input **i** is one 1 as well. Now let's say that after the first second we want to change the state of the memory bit **o** to 0 so we proceed to switch the i bit off. We can see that **o** still remains off regardless of the change in **i**. It isn't until second 2 where we turn **s** that the state of bit **o** finally changes to 1. We can then repeat the process again to flip the **o** bit back on as shown on second 4 and 5.
 
 With this mechanism we are then able to remember the previous state of a bit **i** by manipulating a setter bit **s** on demand. The current stored memory state **o** is then available to be transmitted to other parts of the computer as needed.
 
-## Registers
-As we discussed before on the previous entry the amount of information that we can encode on single bit is very limited. So generally computers stack several of these memory bits to store more meaningful patterns. A set of memory bits holding a particular sequence of bit is known as a register. The amount of memory bits on a register will depend on the cpu architecture. 32 bit processors registers will have 32 bits, 64 bit processors register will have 64 bits and so on. We're gonna follow the  
+## Registers. Pt-1
+As we discussed before on the previous entry the amount of information that we can encode on single bit is very limited. So generally computers stack several of these memory bits to store more meaningful patterns. A set of memory bits holding a particular sequence of bit is known as a register. The amount of memory bits on a register will depend on the cpu architecture. 32 bit processors registers will have 32 bits, 64 bit processors register will have 64 bits and so on. We're going to be using 8 bits (also known as a byte) size registers in this series. We can see a register representation below:
+
+..... Register image....
+
+Notice how each individual bit has it's own input **i** but they all share the same setter bit **s**. This is because as we'll see later it makes more sense for the CPU to load full size data or instructions patterns into its registers as opposed to controlling bits individually. NOTE: We'll be using the condensed imagery (8 bits = 2 lines, 1 register = 1 box) from now own to save some space.
+
+## Bus
+The CPU needs to have access to the information stored on any register at all times, also it needs to be able to freely move data from and to different registers. For this to happen there needs to be some wiring in place that allows any register to reach any part of the computer. Such wiring is known as bus or data bus. The bus size must match that of the register, which in our case is 8 bits (or wires). This same 8 wires will go across the whole computer and will be available to almost all registers. That way whenever a register needs to send its data across all it has to do it to load it into the bus and let it "flow" to its destination, as shown in the diagram below:
+
+.... different registers load into a bus
+
+Now, as you might as noted there is a problem with this. What would happen if multiple registers want to load their information onto the bus at the same time? Well the bus information would end up getting unpredictably overwritten and there would be no guarantee that a register content reached its desired destination. To solve this issue we need to introduce the concept of an enabler.
+
+## Registers. Pt-2
+An enabler consist of a bit and 8 and gates. This device will sit in front of the register byte (shown above) and will only allow its information to freely flow onto the bus when the enabler bit **e** is on. We can see the full representation of register below:
+
+
+
+On our fictional computer most registers will contain an enabler except for those that do not require loading info into the bus.
+
+## Putting it all together.
+The final representation of the bus and the registers will be something like this:
+
+... bus with a couple of registers ...
+
+Let's say we want to move R1 data into R3. The sequence to achieve this will be:
+- Enable R1 data onto the bus by setting e1 = 1
+- Set R3 state to whatever is on the bus by settings s3 = 1
+- Lock R3 state by s3 = 0
+- Disable R1 by setting e1 = 0
+
+This concludes our discussion about registers. On the next blog we'll be putting this together to build a RAM.
+
