@@ -7,13 +7,29 @@ TODO:
    CPU
    RAM
    PERIFERALS I/O
+- Explain the nature of the cycle
+- get an instruction
+- get data
+- process it
+- depending on the result do something else
+- or go and read the next line of the program
+
+(this way starting from the ALU is better)
 
 - Mentioned von neuman at some point
 
 - Remove the quotation that says that this will be mainly about the how do It know
 
-
-POST 2
 - Make some explanation about the canonical representation of the gates and explain 
 why and and or are the only thing necessary things
 
+
+POST 2
+- Use the canonical representation as a segway to explain why we're treating some of the following components as blackboxes
+- Now I need to talk about the delay and timers?
+- The table here is actually wrong needs to account for delay see 
+- Explain situation about a loop that feed on it self.
+
+ALU POST
+- All programs can be reduced to a simple number of basic operation
+- As example we have the following loop

@@ -2,6 +2,7 @@
 layout: post
 title: "Computer Architecture. Pt-3"
 date: 2019-09-30
+published: false
 ---
 
 In the previous entry we took at look at registers and how they can store or load information onto the bus. Today we'll explore how create a computers RAM out of a set of registers, here we go!
