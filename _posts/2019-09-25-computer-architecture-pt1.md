@@ -91,15 +91,17 @@ After applying this we get the following expression:
 
 We can interpret the diagram above similarly as we would with a regular algebraic expression with the difference that multiplication operations will be understood as AND and sum operations as OR. An overline on the inputs indicates the input needs to be NOted. 
 
-We can easily verify that our equation conforms with the truth table by testing some cases. For example substituting the values in the 4th row of the truth table `a = 1, b = 1, s = 0` we get: `0 OR 1 OR 0 OR 0` which correctly evaluate to `out = 1`, feel free to test other rows to convince yourself. This concept can in fact be extended to any boolean function regardless of its complexity. This is an important result because it proves that in order to build any logical device, and consequently any computer, all we need are AND, OR and NOT gates which as explained above can all be constructed starting from NAND gates.
+We can easily verify that our equation conforms with the truth table by testing some cases. For example substituting the values in the 4th row of the truth table `a = 1, b = 1, s = 0` we get: `0 OR 1 OR 0 OR 0` which correctly evaluate to `out = 1`, feel free to test other rows to convince yourself. This concept can in fact be extended to any boolean function regardless of its complexity. 
+
+This is an important result because it proves that in order to build any logical device, and consequently any computer, all we need are AND, OR and NOT gates which as explained above can all be constructed starting from NAND gates.
 
 ## Boolean Algebra 
 
-We could construct a multiplexer device straight out of the canonical expression derived above but that would be a bit more complicated than necessary since we can considerably simplify this expression using some simple boolean algebraic rules as shown below:
+We could construct a multiplexer device straight out of the canonical expression derived above but that would be a bit more complicated than necessary since we can simplify this expression using some boolean algebraic rules as shown below:
 
 ![boolean algebra](https://eduardo-tutorial-videos.s3.us-east-2.amazonaws.com/blogs/computer_arch_1/boolean_algebra.png)
 
-We can see that the resulting expression is been reduced and will translate to a considerably simpler chip 
+We can see that the resulting expression has been considerably reduced and will translate into simpler chip 
 
 ![mux diagram](https://eduardo-tutorial-videos.s3.us-east-2.amazonaws.com/blogs/computer_arch_1/+mux_diagram.png)
 
