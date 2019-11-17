@@ -2,6 +2,7 @@
 layout: post
 title: "Computer Architecture. Pt-2"
 date: 2019-09-28
+published: false
 ---
 
 This follows my previous post about my learnings from [But How Do It Know?](http://www.buthowdoitknow.com/index.html). 

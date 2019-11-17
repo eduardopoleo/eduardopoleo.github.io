@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Computer Architecture. Pt-1"
+title: "Bits, Gates & Algebra"
 date: 2019-09-28
 ---
 
@@ -9,7 +9,7 @@ This starts a series of posts where I talked about the very fundamentals of comp
 
 ## 10,000-foot view
 
-On a (very) high level computers have 2 main components: the Central Processing Unit (CPU) and the Random Access Memory (RAM). The CPU can be seen as the the brain of the machine and its main functions are to perform calculations and control the flow of information across the whole system. RAM on the other hand, is the physical space where most actively used information is stored. These 2 devices work in tandem in a cyclical process as we can see below:
+On a (very) high level computers have 2 main components: the Central Processing Unit (CPU) and the Random Access Memory (RAM). The CPU can be seen as the the brain of the machine and its main functions are to perform calculations and control the flow of information across the whole system. RAM on the other hand, is the physical space where most actively used information is stored. These 2 devices work in tandem in a never-ending cycle as we can see below:
 
 ![cpu_ram](https://eduardo-tutorial-videos.s3.us-east-2.amazonaws.com/blogs/computer_arch_1/cpu_ram.png)
 
@@ -22,7 +22,7 @@ This makes sense intuitively if you think about the last time you bought a compu
 The following series of posts will take a look at how these devices work and interact with each other. We'll be starting our journey from the most fundamental unit of all: **the bit**.
 
 ## Its CODES all the way down
-On a more fundamental level computers are dumb machines that are able to perform simple calculations and procedures fast, like almost light speed fast. When enough of these procedures are put together in the right sequence computers are able to perform tasks that are useful and seemingly complex to humans. They do all this by controlling the electrical current that runs through some small wires known as bits. At any given moment these bits can live in any of these two states:
+On a (very) low level computers are dumb machines that are able to perform simple calculations and procedures fast, like almost light speed fast. When enough of these procedures are put together in the right sequence computers are able to perform tasks that are useful and seemingly complex to humans. They do all this by controlling the electrical current that runs through some small wires known as bits. At any given moment these bits can live in any of these two states:
 
 - 1 (or ON) when electricity runs through.
 - 0 (or OFF) when NO electricity runs through.
