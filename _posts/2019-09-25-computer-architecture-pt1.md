@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Bits, Gates & Algebra"
-date: 2019-09-28
+date: 2019-11-16
 ---
 
 This starts a series of posts where I talked about the very fundamentals of computer architecture. These post are mostly based on my recent learnings from a couple of resources, namely 
