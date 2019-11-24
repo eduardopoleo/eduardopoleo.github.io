@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Memory and RAM"
-date: 2019-09-28
+date: 2019-11-24
 published: true
 ---
 
