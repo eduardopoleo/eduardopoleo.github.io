@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Computer Architecture. Pt-2"
+title: "Memory and RAM"
 date: 2019-09-28
 published: true
 ---
