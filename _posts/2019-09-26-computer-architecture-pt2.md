@@ -66,7 +66,7 @@ Now that I've explained what registers are I'll be simplifying their representat
 ## RAM
 The RAM is composed of many registers carefully ordered in a grid like structure and it's the physical location where most of the actively running programs and data is stored. The great thing about RAM is that, regardless of size, we can access any of its registers at equal speed without paying any time penalty thus, the name "Random Access Memory". The top level api for the RAM could look like this:
 
-![ram api](https://eduardo-tutorial-videos.s3.us-east-2.amazonaws.com/blogs/computer_arch_2/8_ram_api_3.png)
+![ram api](https://eduardo-tutorial-videos.s3.us-east-2.amazonaws.com/blogs/computer_arch_2/ram_api.png)
 
 This RAM chip has 3 inputs, a register **address**, an incoming payload **in** and a **load** bit. The output **out** consists of a specific register output. At any point in time the RAM can only store and/or retrieve the information for one particular register. In order to select such register the CPU needs to provide that specific register's location or **address** within the RAM. The RAM can then parse the **address** and use it to route the **load** bit to the particular register the CPU is interested on activating. Lastly, on the way **out** the RAM uses the **address** again to ensure that the information emitted to the rest of the system is that of the register the CPU is requesting an no other.
 
