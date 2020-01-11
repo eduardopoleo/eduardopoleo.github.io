@@ -2,7 +2,7 @@
 layout: post
 title: "Unix. A History and a Memoir"
 date: 2020-01-11
-published: false
+published: true
 ---
 
 I had some free time over the holidays and ended up reading [A History and a Memoir](https://www.amazon.com/dp/1695978552). As the name suggests the book tells the history of the [Unix](https://en.wikipedia.org/wiki/Unix) operating system and also talks about [Brian Kernighan](https://en.wikipedia.org/wiki/Brian_Kernighan)'s experience at [Bell Labs](https://en.wikipedia.org/wiki/Bell_Labs) from the time he started as an intern in 1967 all the way to his retirement in 2000. This post summarizes some my take aways from the book.
