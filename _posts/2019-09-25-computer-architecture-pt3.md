@@ -17,7 +17,7 @@ end
 
 Nevertheless, as we've seen in previous posts computers are only able to encode and understand binary information so before these programs can be stored and executed they need to be translated to binary code, such translation is known as compilation. The process of compilation happens in many steps and varies considerably from language to language but in the particular case of Ruby goes like this:
 
-<img src="../assets/images/computer_arch3/ruby_compilation.png" alt="ruby-compilation"/>
+<img src="/assets/images/computer_arch3/ruby_compilation.png" alt="ruby-compilation"/>
 
 In the example above [ruby](https://www.ruby-lang.org/en/), a interpreted higher level language, gets compiled down to [C](https://en.wikipedia.org/wiki/C_programming_language) which is a lot more performant but generally regarded as less expressive and harder to use for the lay programmer. C, on the other hand, gets compiled to assembly which ultimately gets translated to binary code (1(s) and 0(s)) by a program known as a assembler. The compiled program can then be loaded into RAM where is accessible to the CPU which ultimately executes it one instruction at a time, as seen in the diagram below.
 
@@ -37,7 +37,7 @@ CAUTION: The particular architecture I'm going to be showing in this post is a s
 ## CPU
 In the diagram below I've opened up the CPU box so that we can expose some of its main components:
 
-<img src="assets/images/computer_arch3/cpu.png" alt="cpu"/>
+<img src="/assets/images/computer_arch3/cpu.png" alt="cpu"/>
 
 This particular CPU consists of 3 different devices: the Arithmetic Logic Unit (**ALU**), a register (**R**), the Program Counter (**PC**). There are also some "**C**" (for control) boxes which I'm using to represent some devices that help parse and determine the flow of information across the whole system. On a higher level these components operate more or less like this: 
 
