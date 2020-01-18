@@ -3,8 +3,8 @@ author: Eduardo Poleo
 email: eduardopoleo@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
   Hey thanks for visiting my blog. I'm a software developer located in Toronto.
-  I do ruby and javascript at work and I mostly write about AWS and scalability
-  these days! Hope you enjoy the write ups.
+  I do ruby and javascript at work and I write about different programming topics.
+  Hope you enjoy the write ups.
 
 show_excerpts: true # set to true to show excerpts on the homepage
 
@@ -15,8 +15,8 @@ minima:
 
   # generate social links in footer
   social_links:
-    twitter: jekyllrb
-    github:  jekyll
+    twitter: https://twitter.com/eduardopoleo
+    github:  https://github.com/eduardopoleo
     # dribbble: jekyll
     # facebook: jekyll
     # flickr:   jekyll
@@ -40,7 +40,7 @@ minima:
 # If you want to link only specific pages in your header, uncomment
 # this and add the path to the pages in order as they should show up
 #header_pages:
-# - about.md
+- about.md
 
 # Build settings
 theme: minima
