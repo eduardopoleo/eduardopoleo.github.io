@@ -15,8 +15,8 @@ minima:
 
   # generate social links in footer
   social_links:
-    twitter: https://twitter.com/eduardopoleo
-    github:  https://github.com/eduardopoleo
+    twitter: eduardopoleo
+    github:  eduardopoleo
     # dribbble: jekyll
     # facebook: jekyll
     # flickr:   jekyll
