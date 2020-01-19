@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "AWS Fundamentals. Pt-1"
+title: "AWS Fundamentals"
 date: 2019-04-19
 ---
 

@@ -77,23 +77,31 @@ You can in fact extrapolate this idea and create ALL (yes ALL!) the different ga
 
 As we advance in our journey we'll want to build more complex logical devices that fulfill different purposes. One of such is known as multiplexer and it is described below:
 
-![multiplexer](https://eduardo-tutorial-videos.s3.us-east-2.amazonaws.com/blogs/computer_arch_1/mux_truth_table.png)
+<img src="/assets/images/computer_arch1/mux_truth_table.png" alt="mux_thruth_table"/>
 
-The multiplexer has 3 inputs and 1 output. It works in such a way that the input **s** determines which of the other inputs, **a** or **b**, becomes the output. So in this case when **s** = 0, **out** will take the current value of **a**. Conversely, if **s** = 1 the value of **out** will be set to the current value of **b**. We can systematically find an algebraic expression for the multiplexer by calculating its canonical representation as follows:
+The multiplexer has 3 inputs and 1 output. It works in such a way that the input **s** determines which of the other inputs, **a** or **b**, becomes the output. So in this case when **s** = 0, **out** will take the current value of **a**. Conversely, if **s** = 1 the value of **out** will be set to the current value of **b**. 
 
-- Select all the rows in the truth table where the output is 1
-- "AND" all the inputs per row
-- "OR" all the results from the previous step
+As circuits and devices become more complex it becomes much easier to study them using algebraic expressions. One straight forward way to derive such equations is by obtaining its canonical representation which can be done by using these steps:
 
-After applying this we get the following expression:
+1. Select all the rows from the truth table where the output is 1
+1. "AND" all the inputs per row
+1. "OR" all the results from the step 2
+
+Let's apply these to the MUX device we described above. From step 1 we know that we'll be working with rows 3, 4, 6 and 8 since those are the bits combination that produce **out** = 1. We can take row 3 for example and express it in the following way:
+
+<img src="/assets/images/computer_arch1/equation_with_ands.png" alt="boolean_factor1"/>
+
+Notice how every input that had a value of 1 was expressed with the same letter found in the table, in this case `a`, and every input that had a value of 0 was drawn with a horizontal bar on top indicating that the input needs to be NOTed for the expression to work, in this case `b` and `s`. We can further simply the notation by removing the `and` altogether much like we do with regular equations when factors multiply, e.g. E = mc<sup>2</sup>:
+
+<img src="/assets/images/computer_arch1/equation_without_ands.png" alt="boolean_factor2"/>
+
+Finally, applying step 2) to the outstanding selected rows 4, 6 and 8 and applying step 3) to all the corresponding results we obtain:
 
 ![canonical representation](https://eduardo-tutorial-videos.s3.us-east-2.amazonaws.com/blogs/computer_arch_1/canonical_representation.png)
 
-We can interpret the diagram above similarly as we would with a regular algebraic expression with the difference that multiplication operations will be understood as AND and sum operations as OR. An overline on the inputs indicates the input needs to be NOted. 
+Notice how I've used `+` sings instead of explicit `or`s, again this is done to improve readability and to obtain a more equation looking expression which will become very convenient as we'll see in the next section. We can easily verify that our equation conforms with the truth table by testing some cases. For example by substituting the values in row 4 `a = 1, b = 1, s = 0` we get: `0 OR 1 OR 0 OR 0` which correctly evaluate to `out = 1`, feel free to test other rows to convince yourself. 
 
-We can easily verify that our equation conforms with the truth table by testing some cases. For example substituting the values in the 4th row of the truth table `a = 1, b = 1, s = 0` we get: `0 OR 1 OR 0 OR 0` which correctly evaluate to `out = 1`, feel free to test other rows to convince yourself. This concept can in fact be extended to any boolean function regardless of its complexity. 
-
-This is an important result because it proves that in order to build any logical device, and consequently any computer, all we need are AND, OR and NOT gates which as explained above can all be constructed starting from NAND gates.
+One important result of the canonical expression is that it shows how we can potentially build any logical device by just using AND, OR and NOT gates which as explained above can all be constructed starting from NAND gates. This explains why NAND gates are normally use as the fundamental primitive to build all computers.
 
 ## Boolean Algebra 
 
