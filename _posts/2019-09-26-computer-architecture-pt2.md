@@ -48,9 +48,13 @@ In the diagram above we have again a NAND gate operating on two bits **X** and *
 
 The problem here is the difference in proximity of **X**, and **Y** to the NAND gate. While electricity runs very fast through the bit wires it is also bound to natural physical constrains. This means that **X** will get to the NAND gate long before **Y** does. So for a considerable period of time and until **Y** reaches the gate the value of **in** and thus **out** will not be correct. But because our bogus bit provides not time delay it will immediately broadcast the incorrect result to the rest of the system, which is not desirable.
 
-The sequential bit implementation will prevent this from happening. If the clock cycle is long enough to allow **Y** to reach the NAND gate (which will be if the computer is properly designed), the memory bit input will end up stabilizing before the current clock cycle has passed. Then, on the next cycle it will start broadcasting the correct value.
+How would the sequential bit help in this case? Let's add a DFF to our previous diagram and see what happens
 
-I hope these 2 scenarios helped demonstrate the importance of the clock along with the flip flops when coordinating logical circuits. From now on we will be treating the memory bits as black boxes to simplify the upcoming diagrams.
+<img src="/assets/images/computer_arch_2/system_with_dff.png" alt="system_with_dff"/>
+
+As I explained before the DFF outputs a delay signal which means that the current **out** was the historical **in\*\*** right at end of the clock cycle `t - 1` so everything enclosed within the dotted box on the right is guaranteed to be on steady state and correct as long as the clock cycle is sufficiently long to allow **Y** reach the NAND gate. Also since **out** is now locked at the **in\*\***<sub>t-1</sub> we prevent the runaway value situation explained on the first scenario where **out** never stabilizes.
+
+I hope this helped demonstrate the importance of the clock along with the sequential logic when coordinating logical circuits. From now on we will be treating the memory bits as black boxes to simplify the upcoming diagrams.
 
 ## Registers and Buses
 We already understand how a memory bit works but as we discussed before on the [previous entry](https://eduardopoleo.github.io/2019/09/28/computer-architechture.html) the amount of information that we can encode on single bit is very limited. So generally computers stack several of these memory bits to store more meaningful patterns. A set of memory bits holding a particular sequence is known as a register. The amount of memory bits on each register will generally depend on the cpu architecture, 16 bit processors will have 16 bits registers, 32 bit processors 32 bits registers and so on. We can see a representation of a register with n bits of memory in the diagram below. The memory bits have been abstracted away into the **Bit[]** boxes but they keep the same api (inputs: **in**, **load**, outputs: **out**) derived on the previous section.
