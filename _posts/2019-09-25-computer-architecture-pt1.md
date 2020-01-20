@@ -77,7 +77,7 @@ You can in fact extrapolate this idea and create ALL (yes ALL!) the different ga
 
 As we advance in our journey we'll want to build more complex logical devices that fulfill different purposes. One of such is known as multiplexer and it is described below:
 
-<img src="/assets/images/computer_arch_1/mux_truth_table.png" alt="mux_thruth_table"/>
+<img src="/assets/images/computer_arch_1/mux_with_table.png" alt="mux_thruth_table"/>
 
 The multiplexer has 3 inputs and 1 output. It works in such a way that the input **s** determines which of the other inputs, **a** or **b**, becomes the output. So in this case when **s** = 0, **out** will take the current value of **a**. Conversely, if **s** = 1 the value of **out** will be set to the current value of **b**. 
 
