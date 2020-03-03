@@ -235,3 +235,5 @@ Other practical advantages are:
 - We have established some patters that are more suitable for scaling our application up. If anyone needs to add a persistance action, change the behavior of the follows relationships or simply add a new milestone they can just go straight into the corresponding methods and make their changes.
 
 I hope you enjoyed the reading. Happy coding!
+
+**NOTE**: This article was originally posted [here](https://medium.com/@eduardopoleo/layers-of-abstraction-5302d6d79317)

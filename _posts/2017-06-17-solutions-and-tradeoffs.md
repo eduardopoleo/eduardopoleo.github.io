@@ -5,8 +5,6 @@ date: 2017-06-17
 published: true
 ---
 
-**NOTE**: Originally posted [here](https://influitive.io/learning-algorithm-forces-us-to-reason-about-different-solutions-to-a-problem-and-understand-their-4b4525b0ac33)
-
 At Influitive every month we get 2 'investment days'. During these days we are not bound to do planned work and are encouraged to invest in our professional growth. Usually developers will use up this time to learn new technologies, work on side projects, write blogs etc.
 
 This time around I have decided to analyze the runtime and space complexity for different solutions to the problem: *Given a string, verify whether all its characters are unique?*. Despite it's simplicity the algorithms we are analyzing are full of subtleties and interesting details worth looking at.
@@ -200,3 +198,5 @@ In terms of performance two solutions stood out: The array solution crushed the 
 
 Finally, if we were to optimize for readability and speed of development, we would probably go with the web dev solution, which offered a good performance trade off in exchange for simplicity.
 Thanks for reading!
+
+**NOTE**: This article was originally posted [here](https://influitive.io/learning-algorithm-forces-us-to-reason-about-different-solutions-to-a-problem-and-understand-their-4b4525b0ac33)
